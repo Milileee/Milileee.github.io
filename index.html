@@ -7,7 +7,7 @@
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -129,7 +129,7 @@
 
 
 
-  <title> 尚书没有派对 </title>
+  <title> 尚书没有派对 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +154,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
@@ -384,163 +384,6 @@
           
           
              <span id="/数学建模/2017-04-24-数学建模笔记之马尔萨斯人口模型(一)/" class="leancloud_visitors" data-flag-title="数学建模之马尔萨斯人口模型(一)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="马尔萨斯人口论"><a href="#马尔萨斯人口论" class="headerlink" title="马尔萨斯人口论"></a><strong>马尔萨斯人口论</strong></h3><h4 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h4><p>人口按照几何增长趋势发展( 按照指数函数增长的趋势 )<br>而实物只有算术增长的趋势( 按照线性函数增长的趋势 )<br>结论:控制人口增长</p>
-<h4 id="马尔萨斯数学模型"><a href="#马尔萨斯数学模型" class="headerlink" title="马尔萨斯数学模型"></a>马尔萨斯数学模型</h4><p>现在我们使用 $P(t)$ 表示t时刻的人口数量,用$r$表示人口增长率<br>现在看做一个连续模型:变化在随时发生,也即人的生老病死随时在发生, 则有:<br>$$P(t+\Delta t)-P(t)=rP(t)\Delta t$$         $$P(t+dt)-P(t)=rP(t)dt$$        $$\dfrac{dP(t)}{dt}=rP(t)$$     $$P(t_0)=P_0$$<br>则我们可以根据以上公式推断出当t为某个具体值时, 我们得到的人口数目为 $P(t)=P_0e^{r(t-t_0)}$, 当$t$趋近于无穷大的时候我们发现人口确实成指数增长</p>
-<p>从这里我们可以看到数学建模研究的一个大致思路:<br><img src="http://upload-images.jianshu.io/upload_images/3020761-dd97c889dd8a160f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数模思路"></p>
-<h3 id="Logistic模型"><a href="#Logistic模型" class="headerlink" title="Logistic模型"></a>Logistic模型</h3><p>在上述马尔萨斯模型中, 人口增长率是基于一定时间段的结果, 例如基于当时的工业农业现有人口现状是有一定意义的,即是说当时的情况下人口增长率是可以在在短期内保持一个特定的数值<br>但是在当今情况下, 人口增长率必定是一个关于时间的函数<br>$$r(t)=r(P(t))=r(1-\dfrac{P(t)}{K})$$这里的K表示我们所研究的生态系统最多可以容纳支撑的人口数量(即生物学上所说的最大容纳量)<br>则人口数量关于时间的积分有:<br>$$\frac{dN(t)}{dt}=r(1-\frac{N(t)}{K})N(t)$$    $$N(t_0)=N_0$$<br>则我们取积分后可以得到:<br>$$N(t)=\frac{K}{1+Ce^{-r(t-t_0)}}$$<br>其中C表示一个参数:<br>$$C=\frac{K-P_0}{P_0}$$<br>则我们考察$t$趋近于无穷大时的极限,结果与马尔萨斯模型完全不同<br>我们可以绘制出人口与时间关系的图形:<br><img src="http://upload-images.jianshu.io/upload_images/3020761-c6ed420516fb0fb8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="logistic模型图"><br>与马尔萨斯模型相比较,这里增加了一个参数$K$, 而且这个参数不容易计算或估计($K$表示环境最大容纳量)<br>则我们对模型 $\frac{dN}{dt}=rN(1-\frac{N}{K})$ 考虑离散化:<br>$$\frac{\Delta N}{\Delta t}=rN(1-\frac{N}{K})$$ 则有:$$N_{t+1}-N_t=rN_t(1-\frac{N<em>t}{K})$$<br>这里的时间离散步为1,每一代就是一个时间步<br>$$N</em>{t+1}=(1+r)N_t-\frac{r}{K}N_t^2$$<br>然后我们取定参数$K$,考虑不同的参数$r$</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://lrrui.cn/数学建模/2017-04-24-数学建模笔记之马尔萨斯人口模型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="尚书">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="尚书没有派对">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/数学建模/2017-04-24-数学建模笔记之马尔萨斯人口模型/" itemprop="url">
-                  数学建模之马尔萨斯人口模型(一)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T15:30:40+08:00">
-                2017-04-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数学建模/" itemprop="url" rel="index">
-                    <span itemprop="name">数学建模</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/数学建模/2017-04-24-数学建模笔记之马尔萨斯人口模型/" class="leancloud_visitors" data-flag-title="数学建模之马尔萨斯人口模型(一)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1611,7 +1454,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2088,7 +1931,24 @@
         showTime(Counter);
       }
     });
-  </script>
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
